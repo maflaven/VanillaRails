@@ -10,7 +10,7 @@ module Phase3
     # pass the rendered html to render_content
     def render(template_name)
       contents = File.read(
-                "views/#{ActiveSupport::Inflector.underscore(self.class.to_s)}/#{template_name}.html.erb"
+                "views/#{self.class.name.underscore}/#{template_name}.html.erb"
                 )
       template = ERB.new(contents).result(binding)
       render_content(template, "text/html")

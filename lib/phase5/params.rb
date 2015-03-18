@@ -13,8 +13,8 @@ module Phase5
     # passed in as a hash to `Params.new` as below:
     def initialize(req, route_params = {})
       @params = {}.merge(route_params)
-      parse_www_encoded_form(req.body) unless req.body.nil?
       parse_www_encoded_form(req.query_string) unless req.query_string.nil?
+      parse_www_encoded_form(req.body) unless req.body.nil?
     end
 
     def [](key)
@@ -37,12 +37,13 @@ module Phase5
       data = URI::decode_www_form(www_encoded_form)
       data.each do |key, value|
         keys = parse_key(key)
-        nest = "['#{keys.pop}']"
+        nest = "['#{keys.shift}']"
 
         until keys.count == 0
-          eval("@params#{nest} = {}")
-          nest << "['#{keys.pop}']"
+          eval("@params#{nest} = {}") if eval("@params#{nest}").nil?
+          nest << "['#{keys.shift}']"
         end
+
         eval("@params#{nest} = value")
       end
     end

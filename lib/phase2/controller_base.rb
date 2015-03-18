@@ -6,6 +6,7 @@ module Phase2
     def initialize(req, res)
       @req = req
       @res = res
+
       @already_built_response = false
     end
 
