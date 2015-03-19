@@ -10,7 +10,6 @@ module RouteHelper
     html += "<form action='#{parsed_path(path_parameters, method)}' "
     html += "method='#{(method == :post) | (method == :delete) ? "post" : "get"}'>"
     html += "\n<input type='submit' value='#{name_string}'>"
-
     html
   end
 
