@@ -1,3 +1,4 @@
 <h1>ALL THE CATS</h1>
 <pre><%= @cats.to_s %></pre>
-<a href="/cats/new">New cat!</a>
+<!-- <a href="/cats/new">New cat!</a> -->
+<%= link_to "New Cat!", "cats_path" %>

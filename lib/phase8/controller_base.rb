@@ -3,7 +3,7 @@ require_relative './flash'
 
 module Phase7
   class ControllerBase < Phase6::ControllerBase
-    
+
     def redirect_to(url)
       super
       flash.store_flash(res)
