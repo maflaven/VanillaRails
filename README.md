@@ -1,20 +1,18 @@
-# w5d2: [Rails Lite!][description]
+#VanillaRails
+Vanilla Rails is a light implementation of the Rails framework.
 
-## Using The Specs
+###Features
+* Template rendering
+* Session storing via WEBrick::Cookie
+* Query string and request body param parsing
+* Route parsing and action invocation
+* Rails Flash support
 
-Some specs have been written to guide you towards the lite. There are
-rspec specs in the `spec` directory and demo servers for you to try
-in the `bin` directory.
+###Instructions to Run
+* bin/p09_route_helper_server.rb is my most up-to-date server which incorporates all features listed above.
+* Navigate to the git directory after downloading, load up that server file, and it will be accessible via http://localhost:3000/
 
-## Suggested Order
-
-0.  `bundle exec rspec spec/p02_controller_spec.rb`
-0.  `bundle exec rspec spec/p03_template_spec.rb`
-0.  `bundle exec rspec spec/p04_session_spec.rb`
-0.  `bundle exec rspec spec/p05_params_spec.rb`
-0.  `bundle exec rspec spec/p06_router_spec.rb`
-0.  `bundle exec rspec spec/p07_integration_spec.rb`
-
-Run `bundle exec rspec` to run all the spec files.
-
-[description]: https://github.com/appacademy/rails-curriculum/blob/master/projects/w5d2-rails-lite-i.md
+###Future Upgrades
+- [ ] Route Helpers (link_to, button_to, etc.)
+- [ ] CSRF protection
+- [ ] Nested routing
